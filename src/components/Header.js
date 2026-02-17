@@ -19,7 +19,7 @@ const Header = ({ searchQuery, setSearchQuery, onHomeClick }) => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">SBOMMA</div>
+        <div className="logo"onClick={handleHomeClick} >SBOMMA</div>
         
         {/* Mobile Menu Toggle Button */}
         <button 
@@ -55,7 +55,7 @@ const Header = ({ searchQuery, setSearchQuery, onHomeClick }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <span className="search-icon">🔍</span>
+          <span className="search-icon" onClick={searchQuery}>🔍</span>
         </div>
       </div>
     </header>
