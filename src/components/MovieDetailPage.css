@@ -1,0 +1,502 @@
+/* Movie Detail Page - Same Layout for ALL Devices */
+.movie-detail-page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Info Card - ALWAYS Poster Left, Text Right */
+.detail-info-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.detail-poster-wrapper {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.detail-poster {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 2/3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.detail-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.detail-year {
+  font-size: 1rem;
+  color: #999;
+  margin: 0;
+}
+
+.detail-genre {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0.3rem 0 0.8rem 0;
+}
+
+.detail-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.meta-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.meta-label {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.meta-text {
+  color: #ccc;
+}
+
+/* Buttons Row - ALWAYS Side by Side */
+.detail-buttons-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-trailer,
+.btn-updates {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.btn-trailer {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-trailer:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-updates {
+  background: #4ade80;
+  color: #000;
+}
+
+.btn-updates:hover {
+  background: #22c55e;
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3.5rem;
+  color: rgba(74, 222, 128, 0.3);
+  letter-spacing: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.placeholder-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.placeholder-play {
+  width: 70px;
+  height: 70px;
+  background: #4ade80;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.placeholder-play:hover {
+  background: #22c55e;
+  transform: scale(1.1);
+}
+
+.placeholder-play span {
+  font-size: 1.8rem;
+  color: #000;
+  margin-left: 4px;
+}
+
+/* Synopsis */
+.synopsis-container {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.synopsis-title {
+  font-size: 1.2rem;
+  color: #4ade80;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.synopsis-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #ccc;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Info Grid - ALWAYS 3 Columns */
+.movie-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.info-item {
+  background: rgba(74, 222, 128, 0.05);
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  text-align: center;
+}
+
+.info-label {
+  display: block;
+  color: #999;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-value {
+  display: block;
+  color: #4ade80;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Not Found */
+.not-found {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.not-found button {
+  background: #4ade80;
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.not-found button:hover {
+  background: #22c55e;
+}
+
+/* ==================== RESPONSIVE - SAME LAYOUT ==================== */
+
+/* Tablet - Same layout, smaller sizes */
+@media (max-width: 768px) {
+  .detail-content {
+    padding: 0.5rem;
+  }
+
+  .detail-info-card {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .detail-poster-wrapper {
+    width: 100px;  /* Smaller poster */
+  }
+
+  .detail-title {
+    font-size: 1.2rem;
+  }
+
+  .detail-year {
+    font-size: 0.9rem;
+  }
+
+  .detail-genre {
+    font-size: 0.85rem;
+  }
+
+  .detail-meta-row {
+    font-size: 0.85rem;
+  }
+
+  .detail-buttons-row {
+    gap: 0.8rem;
+  }
+
+  .btn-trailer,
+  .btn-updates {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .synopsis-container {
+    padding: 1rem;
+  }
+
+  .synopsis-title {
+    font-size: 1.1rem;
+  }
+
+  .synopsis-text {
+    font-size: 0.9rem;
+  }
+
+  .movie-info-grid {
+    gap: 0.8rem;
+  }
+
+  .info-item {
+    padding: 0.6rem;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+  }
+
+  .info-value {
+    font-size: 0.85rem;
+  }
+
+  .placeholder-logo {
+    font-size: 2.5rem;
+  }
+
+  .placeholder-text {
+    font-size: 0.75rem;
+  }
+
+  .placeholder-play {
+    width: 60px;
+    height: 60px;
+  }
+
+  .placeholder-play span {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile - Same layout, even smaller sizes */
+@media (max-width: 480px) {
+  .detail-content {
+    padding: 0.3rem;
+  }
+
+  .detail-info-card {
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .detail-poster-wrapper {
+    width: 85px;  /* Even smaller poster */
+  }
+
+  .detail-title {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  .detail-year {
+    font-size: 0.8rem;
+  }
+
+  .detail-genre {
+    font-size: 0.75rem;
+    margin: 0.2rem 0 0.5rem 0;
+  }
+
+  .detail-meta-row {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .meta-icon {
+    font-size: 0.85rem;
+  }
+
+  .detail-buttons-row {
+    gap: 0.5rem;
+  }
+
+  .btn-trailer,
+  .btn-updates {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .btn-icon {
+    font-size: 0.9rem;
+  }
+
+  .synopsis-container {
+    padding: 0.8rem;
+  }
+
+  .synopsis-title {
+    font-size: 1rem;
+  }
+
+  .synopsis-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .movie-info-grid {
+    gap: 0.5rem;
+  }
+
+  .info-item {
+    padding: 0.5rem;
+  }
+
+  .info-label {
+    font-size: 0.7rem;
+  }
+
+  .info-value {
+    font-size: 0.8rem;
+  }
+
+  .placeholder-logo {
+    font-size: 2rem;
+  }
+
+  .placeholder-text {
+    font-size: 0.7rem;
+  }
+
+  .placeholder-play {
+    width: 50px;
+    height: 50px;
+  }
+
+  .placeholder-play span {
+    font-size: 1.2rem;
+  }
+}
+
+/* Very small mobile - Extra compact */
+@media (max-width: 375px) {
+  .detail-poster-wrapper {
+    width: 75px;  /* Very small poster */
+  }
+
+  .detail-title {
+    font-size: 0.95rem;
+  }
+
+  .detail-year,
+  .detail-genre {
+    font-size: 0.7rem;
+  }
+
+  .detail-meta-row {
+    font-size: 0.7rem;
+  }
+
+  .btn-trailer,
+  .btn-updates {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

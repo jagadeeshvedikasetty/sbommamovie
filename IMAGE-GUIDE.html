@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHETTY - Image Adding Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 26, 26, 0.8);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #4ade80;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4ade80;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4ade80;
+        }
+
+        h3 {
+            color: #6ee7b7;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #d1d5db;
+        }
+
+        .method {
+            background: rgba(74, 222, 128, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #4ade80;
+        }
+
+        .code-block {
+            background: #0a0a0a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border: 1px solid #4ade80;
+        }
+
+        code {
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            color: #d1d5db;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 3px solid #6ee7b7;
+        }
+
+        .step-number {
+            background: #4ade80;
+            color: #0a0a0a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50%;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .warning {
+            background: rgba(251, 191, 36, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+            margin: 1rem 0;
+        }
+
+        .tip {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            margin: 1rem 0;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            color: #d1d5db;
+        }
+
+        .folder-structure {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #4ade80;
+            margin: 1rem 0;
+        }
+
+        .highlight {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 SHETTY Image Adding Guide</h1>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+            Learn how to add custom movie posters to your website
+        </p>
+
+        <!-- Method 1 -->
+        <div class="method">
+            <h2>Method 1: Local Images (Recommended)</h2>
+            
+            <h3>For React Version:</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Create the folder structure:</strong>
+                <div class="folder-structure">
+public/<br>
+└── images/<br>
+    └── movies/<br>
+        ├── dd-returns.jpg<br>
+        ├── nene-naa.jpg<br>
+        ├── vidyarthi.jpg<br>
+        └── ...
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Place your images in the movies folder</strong>
+                <p>Add your movie poster images (JPG or PNG) to: <code>public/images/movies/</code></p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Update MovieGrid.js:</strong>
+                <div class="code-block">
+                    <pre><code>const moviesData = [
+  {
+    id: 1,
+    title: "DD Returns",
+    year: "2023",
+    <span class="highlight">image: "/images/movies/dd-returns.jpg"</span>,  // Changed!
+    rating: 7.5,
+    genre: "Action, Thriller"
+  },
+  {
+    id: 2,
+    title: "Nene Naa",
+    year: "2023",
+    <span class="highlight">image: "/images/movies/nene-naa.jpg"</span>,  // Changed!
+    rating: 8.2,
+    genre: "Horror, Mystery"
+  }
+];</code></pre>
+                </div>
+            </div>
+
+            <h3>For Standalone HTML Version:</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Create folder next to index.html:</strong>
+                <div class="folder-structure">
+index.html<br>
+images/<br>
+└── movies/<br>
+    ├── dd-returns.jpg<br>
+    ├── nene-naa.jpg<br>
+    └── ...
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Update the moviesData in index.html:</strong>
+                <div class="code-block">
+                    <pre><code>const moviesData = [
+  {
+    id: 1,
+    title: "DD Returns",
+    year: "2023",
+    <span class="highlight">image: "images/movies/dd-returns.jpg"</span>,  // Changed!
+    rating: 7.5,
+    genre: "Action, Thriller"
+  }
+];</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Method 2 -->
+        <div class="method">
+            <h2>Method 2: Online Image URLs</h2>
+            <p>Use direct links to images hosted online (fastest setup, no local files needed):</p>
+            
+            <div class="code-block">
+                <pre><code>const moviesData = [
+  {
+    id: 1,
+    title: "DD Returns",
+    year: "2023",
+    <span class="highlight">image: "https://example.com/images/dd-returns.jpg"</span>,
+    rating: 7.5,
+    genre: "Action, Thriller"
+  }
+];</code></pre>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> You can use image hosting services like:
+                <ul>
+                    <li>Imgur</li>
+                    <li>Cloudinary</li>
+                    <li>ImgBB</li>
+                    <li>Your own web server</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Image Specs -->
+        <h2>📐 Image Specifications</h2>
+        <div class="method">
+            <ul>
+                <li><strong>Format:</strong> JPG or PNG (JPG recommended for smaller file size)</li>
+                <li><strong>Aspect Ratio:</strong> 2:3 (Portrait) - e.g., 300x450 or 400x600</li>
+                <li><strong>Recommended Dimensions:</strong> 300x450 pixels or 400x600 pixels</li>
+                <li><strong>File Size:</strong> Keep under 200KB for faster loading</li>
+                <li><strong>Naming:</strong> Use lowercase with hyphens (e.g., <code>my-movie-name.jpg</code>)</li>
+            </ul>
+        </div>
+
+        <!-- Adding New Movies -->
+        <h2>➕ Adding New Movies</h2>
+        <div class="method">
+            <p>To add a new movie, add this to the moviesData array:</p>
+            <div class="code-block">
+                <pre><code>const moviesData = [
+  // ... existing movies ...
+  ,{
+    id: 13,  // <-- Next available ID
+    title: "Your New Movie",
+    year: "2024",
+    image: "/images/movies/your-new-movie.jpg",
+    rating: 8.5,
+    genre: "Action, Drama"
+  }
+];</code></pre>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <h2>🔧 Troubleshooting</h2>
+        <div class="method">
+            <div class="warning">
+                <strong>⚠️ Images not showing?</strong>
+                <ul>
+                    <li>Check the file path is correct (case-sensitive!)</li>
+                    <li>Make sure the image file exists in the folder</li>
+                    <li>Open browser console (F12) and check for errors</li>
+                    <li>Verify file extension matches (.jpg vs .jpeg)</li>
+                    <li>For React: Make sure the path starts with / (e.g., /images/...)</li>
+                    <li>For HTML: Use relative path (e.g., images/...)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Images loading slowly?</strong>
+                <ul>
+                    <li>Compress your images (use TinyPNG or similar)</li>
+                    <li>Reduce image dimensions to recommended size</li>
+                    <li>Convert PNG to JPG if possible</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quick Example -->
+        <h2>⚡ Quick Example</h2>
+        <div class="method">
+            <p>Complete example with 3 movies using local images:</p>
+            <div class="code-block">
+                <pre><code>const moviesData = [
+  {
+    id: 1,
+    title: "DD Returns",
+    year: "2023",
+    image: "/images/movies/dd-returns.jpg",
+    rating: 7.5,
+    genre: "Action, Thriller"
+  },
+  {
+    id: 2,
+    title: "Nene Naa",
+    year: "2023",
+    image: "/images/movies/nene-naa.jpg",
+    rating: 8.2,
+    genre: "Horror, Mystery"
+  },
+  {
+    id: 3,
+    title: "Vidyarthi",
+    year: "2023",
+    image: "/images/movies/vidyarthi.jpg",
+    rating: 7.8,
+    genre: "Drama, Action"
+  }
+];</code></pre>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #4ade80;">
+            <p style="color: #4ade80; font-size: 1.2rem;">
+                🎉 You're all set! Add your images and enjoy your custom movie website!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

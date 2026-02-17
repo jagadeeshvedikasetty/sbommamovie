@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHETTY - Deployment Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 26, 26, 0.8);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #4ade80;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .deployment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .option-card {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(74, 222, 128, 0.05) 100%);
+            border: 2px solid rgba(74, 222, 128, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            border-color: #4ade80;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.2);
+        }
+
+        .option-card h2 {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .emoji {
+            font-size: 2rem;
+        }
+
+        .difficulty {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.5rem 0;
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #d1d5db;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .steps-section {
+            margin: 3rem 0;
+            background: rgba(74, 222, 128, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #4ade80;
+        }
+
+        .steps-section h2 {
+            color: #4ade80;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 3px solid #6ee7b7;
+        }
+
+        .step-number {
+            background: #4ade80;
+            color: #0a0a0a;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .step h3 {
+            color: #6ee7b7;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .code-block {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border: 1px solid #4ade80;
+            font-family: 'Courier New', monospace;
+        }
+
+        code {
+            color: #4ade80;
+        }
+
+        .command {
+            color: #fbbf24;
+        }
+
+        .tip {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            margin: 1rem 0;
+        }
+
+        .warning {
+            background: rgba(251, 191, 36, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+            margin: 1rem 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .comparison-table th {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(74, 222, 128, 0.05);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4ade80;
+            color: #0a0a0a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #22c55e;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(74, 222, 128, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(74, 222, 128, 0.3);
+            color: #a0a0a0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .deployment-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 SHETTY Deployment Guide</h1>
+        <p class="subtitle">Choose the best deployment method for your needs</p>
+
+        <!-- Deployment Options -->
+        <div class="deployment-options">
+            <!-- Vercel -->
+            <div class="option-card">
+                <h2><span class="emoji">▲</span> Vercel</h2>
+                <span class="difficulty">⭐ Easiest</span>
+                <ul class="features">
+                    <li>Deploy in 2 minutes</li>
+                    <li>Automatic HTTPS</li>
+                    <li>Free tier available</li>
+                    <li>Global CDN</li>
+                    <li>Best for React</li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">npm install -g vercel</span></code><br>
+                    <code><span class="command">vercel</span></code>
+                </div>
+            </div>
+
+            <!-- Netlify -->
+            <div class="option-card">
+                <h2><span class="emoji">🌐</span> Netlify</h2>
+                <span class="difficulty">⭐ Easy</span>
+                <ul class="features">
+                    <li>Drag & drop deployment</li>
+                    <li>Continuous deployment</li>
+                    <li>Free SSL certificate</li>
+                    <li>Form handling</li>
+                    <li>Edge functions</li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">npm run build</span></code><br>
+                    <code>Upload build folder to netlify.com/drop</code>
+                </div>
+            </div>
+
+            <!-- GitHub Pages -->
+            <div class="option-card">
+                <h2><span class="emoji">🐙</span> GitHub Pages</h2>
+                <span class="difficulty">⭐⭐ Medium</span>
+                <ul class="features">
+                    <li>100% Free forever</li>
+                    <li>Git-based workflow</li>
+                    <li>Great for portfolios</li>
+                    <li>yourname.github.io URL</li>
+                    <li>Open source friendly</li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">npm install --save-dev gh-pages</span></code><br>
+                    <code><span class="command">npm run deploy</span></code>
+                </div>
+            </div>
+
+            <!-- Traditional Hosting -->
+            <div class="option-card">
+                <h2><span class="emoji">🖥️</span> cPanel/FTP</h2>
+                <span class="difficulty">⭐⭐⭐ Advanced</span>
+                <ul class="features">
+                    <li>Use existing hosting</li>
+                    <li>Full control</li>
+                    <li>Custom domains</li>
+                    <li>Bluehost, HostGator, etc.</li>
+                    <li>Manual uploads</li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">npm run build</span></code><br>
+                    <code>Upload build folder via FTP</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start: Vercel -->
+        <div class="steps-section">
+            <h2>🏃 Quick Start: Deploy with Vercel (Recommended)</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span> Install Vercel CLI</h3>
+                <div class="code-block">
+                    <code><span class="command">npm install -g vercel</span></code>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span> Navigate to Project</h3>
+                <div class="code-block">
+                    <code><span class="command">cd shetty-website</span></code>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span> Deploy!</h3>
+                <div class="code-block">
+                    <code><span class="command">vercel</span></code>
+                </div>
+                <p style="margin-top: 1rem; color: #d1d5db;">
+                    Follow the prompts in your terminal. Vercel will give you a live URL in seconds!
+                </p>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Pro Tip:</strong> Run <code>vercel --prod</code> to deploy to production after testing.
+            </div>
+        </div>
+
+        <!-- Netlify Drag & Drop -->
+        <div class="steps-section">
+            <h2>🎯 Super Easy: Netlify Drag & Drop</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span> Build Your Project</h3>
+                <div class="code-block">
+                    <code><span class="command">npm run build</span></code>
+                </div>
+                <p style="margin-top: 1rem; color: #d1d5db;">
+                    This creates a "build" folder with all your optimized files.
+                </p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span> Visit Netlify Drop</h3>
+                <p style="color: #d1d5db;">
+                    Go to: <a href="https://app.netlify.com/drop" style="color: #4ade80;">https://app.netlify.com/drop</a>
+                </p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span> Drag & Drop</h3>
+                <p style="color: #d1d5db;">
+                    Simply drag your "build" folder onto the page. That's it! 🎉
+                </p>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h2 style="color: #4ade80; text-align: center; margin: 3rem 0 2rem;">📊 Deployment Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Difficulty</th>
+                    <th>Speed</th>
+                    <th>Free Tier</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vercel</td>
+                    <td>⭐ Easy</td>
+                    <td>⚡ Very Fast</td>
+                    <td>✅ Yes</td>
+                    <td>React Apps</td>
+                </tr>
+                <tr>
+                    <td>Netlify</td>
+                    <td>⭐ Easy</td>
+                    <td>⚡ Very Fast</td>
+                    <td>✅ Yes</td>
+                    <td>Static Sites</td>
+                </tr>
+                <tr>
+                    <td>GitHub Pages</td>
+                    <td>⭐⭐ Medium</td>
+                    <td>🚀 Fast</td>
+                    <td>✅ Yes (Forever)</td>
+                    <td>Open Source</td>
+                </tr>
+                <tr>
+                    <td>cPanel/FTP</td>
+                    <td>⭐⭐⭐ Hard</td>
+                    <td>🐌 Varies</td>
+                    <td>❌ Paid Only</td>
+                    <td>Traditional Hosting</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pre-Deployment Checklist -->
+        <div class="steps-section">
+            <h2>✅ Pre-Deployment Checklist</h2>
+            <div style="padding-left: 1rem;">
+                <p style="color: #d1d5db; margin: 0.8rem 0;">
+                    <input type="checkbox" style="margin-right: 0.5rem;"> 
+                    Add your custom movie images to <code>public/images/movies/</code>
+                </p>
+                <p style="color: #d1d5db; margin: 0.8rem 0;">
+                    <input type="checkbox" style="margin-right: 0.5rem;"> 
+                    Update movie data in <code>src/components/MovieGrid.js</code>
+                </p>
+                <p style="color: #d1d5db; margin: 0.8rem 0;">
+                    <input type="checkbox" style="margin-right: 0.5rem;"> 
+                    Test locally with <code>npm start</code>
+                </p>
+                <p style="color: #d1d5db; margin: 0.8rem 0;">
+                    <input type="checkbox" style="margin-right: 0.5rem;"> 
+                    Build successfully with <code>npm run build</code>
+                </p>
+                <p style="color: #d1d5db; margin: 0.8rem 0;">
+                    <input type="checkbox" style="margin-right: 0.5rem;"> 
+                    No errors in console (Press F12 to check)
+                </p>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="warning">
+            <h3 style="color: #fbbf24; margin-bottom: 1rem;">⚠️ Common Issues & Solutions</h3>
+            <p><strong>Build fails?</strong></p>
+            <div class="code-block" style="margin: 0.5rem 0 1rem;">
+                <code><span class="command">rm -rf node_modules package-lock.json</span></code><br>
+                <code><span class="command">npm install</span></code><br>
+                <code><span class="command">npm run build</span></code>
+            </div>
+            
+            <p><strong>White screen after deployment?</strong></p>
+            <p style="color: #d1d5db; margin: 0.5rem 0;">Check browser console (F12) for errors. Verify all image paths are correct.</p>
+            
+            <p><strong>Images not loading?</strong></p>
+            <p style="color: #d1d5db; margin: 0.5rem 0;">Make sure images are in <code>public/images/movies/</code> and paths start with <code>/</code></p>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <h2 style="color: #4ade80; margin-bottom: 1.5rem;">Ready to Deploy?</h2>
+            <a href="https://vercel.com" class="cta-button" target="_blank">Deploy with Vercel</a>
+            <a href="https://netlify.com" class="cta-button" target="_blank">Deploy with Netlify</a>
+            <a href="https://pages.github.com" class="cta-button" target="_blank">GitHub Pages</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>📖 For detailed step-by-step instructions, check <strong>DEPLOYMENT-GUIDE.md</strong></p>
+            <p style="margin-top: 1rem;">Made with ❤️ for SHETTY</p>
+        </div>
+    </div>
+</body>
+</html>

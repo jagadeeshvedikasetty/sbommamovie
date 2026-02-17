@@ -1,0 +1,147 @@
+// All movie data in one place
+export const moviesData = [
+  {
+    id: 1,
+    title: "Loki",
+    year: "2023",
+    image: "/images/movies/loki.jpg",
+    rating: 7.5,
+    genre: "Action, Thriller",
+    director: "S. Prabhakar Reddy",
+    cast: "Tom Hiddleston, Owen Wilson, Sophia Di Martino",
+    synopsis: "After stealing the Tesseract, Loki comes into contact with a mysterious organization that gives him an ominous ultimatum, either fix the timeline or cease to exist completely.",
+    videoUrl: "https://youtu.be/KOlPlINXQDU?si=pzr9yy4zm2URIhNw"
+  },
+  {
+    id: 2,
+    title: "Loki Season 2",
+    year: "2023",
+    image: "/images/movies/LOKI_S2_Digital_KA_1680.webp",
+    rating: 8.2,
+    genre: "Action, Mystery",
+    director: "Caarthick Raju",
+    cast: "Tom Hiddleston, Owen Wilson, Sophia Di Martino",
+    synopsis: "Loki finds himself in a battle for the soul of the Time Variance Authority. Along with Mobius, Hunter B-15 and a team of new and returning characters, Loki navigates an ever-expanding and increasingly dangerous multiverse.",
+    videoUrl: "https://youtu.be/RuLU0EOfQ2E?si=vP6Geg-_wv3RzgMN"
+  },
+  {
+    id: 3,
+    title: "The Avengers",
+    year: "2012",
+    image: "/images/movies/avengers.jpg",
+    rating: 8.0,
+    genre: "Action, Sci-Fi",
+    director: "Joss Whedon",
+    cast: "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner",
+    synopsis: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+    videoUrl: "https://youtu.be/zJUbe3t_x-M?si=VRtFq_GvIxJgqjIm"
+  },
+  {
+    id: 4,
+    title: "Avengers: Age of Ultron",
+    year: "2015",
+    image: "/images/movies/avengers 2.jpg",
+    rating: 7.3,
+    genre: "Action, Adventure",
+    director: "Joss Whedon",
+    cast: "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson",
+    synopsis: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",
+    videoUrl: "https://youtu.be/S55M0H4r3xo?si=9aYmArskUdNItBTa"
+  },
+  {
+    id: 5,
+    title: "Avengers: Infinity War",
+    year: "2018",
+    image: "/images/movies/avengers 3.jpg",
+    rating: 8.4,
+    genre: "Action, Adventure",
+    director: "Anthony Russo, Joe Russo",
+    cast: "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Benedict Cumberbatch",
+    synopsis: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+    videoUrl: "https://youtu.be/6ZfuNTqbHE8?si=example"
+  },
+  {
+    id: 6,
+    title: "Avengers: Endgame",
+    year: "2019",
+    image: "/images/movies/avengers 4.jpg",
+    rating: 8.4,
+    genre: "Action, Drama",
+    director: "Anthony Russo, Joe Russo",
+    cast: "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson",
+    synopsis: "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+    videoUrl: "https://youtu.be/TcMBFSGVi1c?si=example"
+  },
+  {
+    id: 7,
+    title: "Captain America: Civil War",
+    year: "2016",
+    image: "/images/movies/Civil-War.jpg",
+    rating: 7.8,
+    genre: "Action, Adventure",
+    director: "Anthony Russo, Joe Russo",
+    cast: "Chris Evans, Robert Downey Jr., Scarlett Johansson, Sebastian Stan",
+    synopsis: "Political involvement in the Avengers' affairs causes a rift between Captain America and Iron Man.",
+    videoUrl: ""
+  },
+  {
+    id: 8,
+    title: "Doctor Strange in the Multiverse of Madness",
+    year: "2022",
+    image: "/images/movies/Doctor Strange in the Multiverse of Madness.jpg",
+    rating: 7.0,
+    genre: "Action, Fantasy",
+    director: "Sam Raimi",
+    cast: "Benedict Cumberbatch, Elizabeth Olsen, Chiwetel Ejiofor",
+    synopsis: "Doctor Strange teams up with a mysterious teenage girl who can travel across multiverses, to battle other-universe versions of himself which threaten to wipe out the multiverse.",
+    videoUrl: ""
+  },
+  {
+    id: 9,
+    title: "Spider-Man: No Way Home",
+    year: "2021",
+    image: "/images/movies/spider-man no way home.jpg",
+    rating: 8.2,
+    genre: "Action, Adventure",
+    director: "Jon Watts",
+    cast: "Tom Holland, Zendaya, Benedict Cumberbatch",
+    synopsis: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear.",
+    videoUrl: ""
+  },
+  {
+    id: 10,
+    title: "Ant-Man",
+    year: "2015",
+    image: "/images/movies/ant-man.jpg",
+    rating: 7.3,
+    genre: "Action, Comedy",
+    director: "Peyton Reed",
+    cast: "Paul Rudd, Michael Douglas, Evangeline Lilly",
+    synopsis: "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor protect the secret behind his spectacular Ant-Man suit.",
+    videoUrl: ""
+  },
+  {
+    id: 11,
+    title: "Ant-Man and the Wasp",
+    year: "2018",
+    image: "/images/movies/ant-man 2.jpg",
+    rating: 7.0,
+    genre: "Action, Comedy",
+    director: "Peyton Reed",
+    cast: "Paul Rudd, Evangeline Lilly, Michael Peña",
+    synopsis: "As Scott Lang balances being both a superhero and a father, Hope van Dyne and Dr. Hank Pym present an urgent new mission that finds the Ant-Man fighting alongside the Wasp to uncover secrets from their past.",
+    videoUrl: ""
+  },
+  {
+    id: 12,
+    title: "Ant-Man and the Wasp: Quantumania",
+    year: "2023",
+    image: "/images/movies/ant-man 3.jpg",
+    rating: 6.4,
+    genre: "Action, Adventure",
+    director: "Peyton Reed",
+    cast: "Paul Rudd, Evangeline Lilly, Jonathan Majors",
+    synopsis: "Scott Lang and Hope Van Dyne are dragged into the Quantum Realm, along with Hope's parents and Scott's daughter. Together they must find a way to escape, but what secrets is Hope's mother hiding?",
+    videoUrl: ""
+  }
+];

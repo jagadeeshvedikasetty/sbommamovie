@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHETTY - Where Quality & Clarity Matters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #4ade80;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --hover-overlay: rgba(74, 222, 128, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 5px;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-green);
+            background: var(--hover-overlay);
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 25px;
+            padding: 0.6rem 2.5rem 0.6rem 1.2rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            width: 250px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+            width: 300px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 6rem 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Movie Grid */
+        .movie-grid-section {
+            padding: 3rem 2rem 5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .movie-card {
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+            cursor: pointer;
+        }
+
+        .movie-card-inner {
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover .movie-card-inner {
+            transform: translateY(-10px);
+        }
+
+        .movie-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2/3;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .movie-card:hover .movie-image-container {
+            box-shadow: 
+                0 8px 30px rgba(74, 222, 128, 0.2),
+                0 0 40px rgba(74, 222, 128, 0.1);
+        }
+
+        .movie-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .movie-card:hover .movie-image {
+            transform: scale(1.1);
+        }
+
+        .movie-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.7) 50%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            gap: 1rem;
+        }
+
+        .movie-card:hover .movie-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            background: var(--primary-green);
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0a0a0a;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .play-button:hover {
+            background: #22c55e;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(74, 222, 128, 0.4);
+        }
+
+        .movie-info-overlay {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .movie-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            backdrop-filter: blur(10px);
+        }
+
+        .movie-genre {
+            background: rgba(74, 222, 128, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .quality-badge {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: rgba(74, 222, 128, 0.9);
+            color: #0a0a0a;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(74, 222, 128, 0.3);
+        }
+
+        .movie-details {
+            padding: 1rem 0.5rem 0;
+        }
+
+        .movie-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            transition: color 0.3s ease;
+        }
+
+        .movie-card:hover .movie-title {
+            color: var(--primary-green);
+        }
+
+        .movie-year {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results h3 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav {
+                gap: 1rem;
+            }
+
+            .search-input {
+                width: 200px;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">SHETTY</div>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active">
+                    <span>🏠</span>
+                    Home
+                </a>
+                <a href="#about" class="nav-link">
+                    <span>ℹ️</span>
+                    About
+                </a>
+                <a href="#bug" class="nav-link">
+                    <span>🐛</span>
+                    Bug
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Where Quality & Clarity Matters</h1>
+            <p class="hero-subtitle">
+                Watch Telugu movies in HD, exclusively available on SHETTY.COM
+            </p>
+            <p class="hero-description">
+                Developed for smartphones, tablets and PCs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Movie Grid -->
+    <section class="movie-grid-section">
+        <div id="movieGrid" class="movie-grid"></div>
+    </section>
+
+    <script>
+        // Movie Data
+        const moviesData = [
+            {
+                id: 1,
+                title: "DD Returns",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/1a472a/4ade80?text=DD+Returns",
+                rating: 7.5,
+                genre: "Action, Thriller"
+            },
+            {
+                id: 2,
+                title: "Nene Naa",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/472a1a/de804a?text=Nene+Naa",
+                rating: 8.2,
+                genre: "Horror, Mystery"
+            },
+            {
+                id: 3,
+                title: "Vidyarthi",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/4a3c1a/debd4a?text=Vidyarthi",
+                rating: 7.8,
+                genre: "Drama, Action"
+            },
+            {
+                id: 4,
+                title: "Gandeevadhari Arjuna",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/1a2a47/4a80de?text=Arjuna",
+                rating: 7.9,
+                genre: "Action, Thriller"
+            },
+            {
+                id: 5,
+                title: "Bedurulanka 2012",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/471a3c/de4abd?text=Bedurulanka",
+                rating: 8.5,
+                genre: "Comedy, Drama"
+            },
+            {
+                id: 6,
+                title: "Journey Of Love -18 Plus",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/1a4747/4adede?text=Journey+Of+Love",
+                rating: 6.8,
+                genre: "Romance, Drama"
+            },
+            {
+                id: 7,
+                title: "Family Drama",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/3c1a47/bd4ade?text=Family+Drama",
+                rating: 7.3,
+                genre: "Drama, Family"
+            },
+            {
+                id: 8,
+                title: "Romantic Thriller",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/47241a/de774a?text=Romantic",
+                rating: 7.6,
+                genre: "Romance, Thriller"
+            },
+            {
+                id: 9,
+                title: "Action Hero",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/24471a/77de4a?text=Action+Hero",
+                rating: 8.0,
+                genre: "Action, Adventure"
+            },
+            {
+                id: 10,
+                title: "Bharatapuram",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/1a4724/4ade77?text=Bharatapuram",
+                rating: 7.4,
+                genre: "Action, Drama"
+            },
+            {
+                id: 11,
+                title: "Ramabanam",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/471a24/de4a77?text=Ramabanam",
+                rating: 7.7,
+                genre: "Action, Drama"
+            },
+            {
+                id: 12,
+                title: "Dance Special",
+                year: "2023",
+                image: "https://via.placeholder.com/300x450/1a2447/4a77de?text=Dance+Special",
+                rating: 7.1,
+                genre: "Drama, Music"
+            }
+        ];
+
+        // Render Movies
+        function renderMovies(movies) {
+            const movieGrid = document.getElementById('movieGrid');
+            
+            if (movies.length === 0) {
+                movieGrid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No movies found</h3>
+                        <p>Try searching for a different title or genre</p>
+                    </div>
+                `;
+                return;
+            }
+
+            movieGrid.innerHTML = movies.map((movie, index) => `
+                <div class="movie-card" style="animation-delay: ${index * 0.1}s">
+                    <div class="movie-card-inner">
+                        <div class="movie-image-container">
+                            <img src="${movie.image}" alt="${movie.title}" class="movie-image">
+                            <div class="movie-overlay">
+                                <button class="play-button">
+                                    <span>▶</span>
+                                    <span>Play Now</span>
+                                </button>
+                                <div class="movie-info-overlay">
+                                    <div class="movie-rating">
+                                        <span>⭐</span>
+                                        ${movie.rating}
+                                    </div>
+                                    <div class="movie-genre">${movie.genre}</div>
+                                </div>
+                            </div>
+                            <div class="quality-badge">HD</div>
+                        </div>
+                        <div class="movie-details">
+                            <h3 class="movie-title">${movie.title}</h3>
+                            <p class="movie-year">${movie.year}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            if (query.trim() === '') {
+                renderMovies(moviesData);
+            } else {
+                const filtered = moviesData.filter(movie => 
+                    movie.title.toLowerCase().includes(query) ||
+                    movie.genre.toLowerCase().includes(query) ||
+                    movie.year.includes(query)
+                );
+                renderMovies(filtered);
+            }
+        });
+
+        // Initial Render
+        renderMovies(moviesData);
+    </script>
+</body>
+</html>
