@@ -46,7 +46,7 @@ export const moviesData = [
     director: "Joss Whedon",
     cast: "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson",
     synopsis: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",
-    videoUrl: "https://youtu.be/S55M0H4r3xo?si=9aYmArskUdNItBTa"
+    videoUrl: "https://youtu.be/rG-tPGMTAjU?si=vCafjjZsDtCoZih4"
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ export const moviesData = [
     director: "Anthony Russo, Joe Russo",
     cast: "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Benedict Cumberbatch",
     synopsis: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
-    videoUrl: "https://youtu.be/6ZfuNTqbHE8?si=example"
+    videoUrl: "https://youtu.be/seMZ6p2SF6U?si=M_omyMDh4PGBk7uW"
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ export const moviesData = [
     director: "Anthony Russo, Joe Russo",
     cast: "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson",
     synopsis: "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-    videoUrl: "https://youtu.be/TcMBFSGVi1c?si=example"
+    videoUrl: "https://youtu.be/ddxW1ZyKeSs?si=wuMaFeKmeJCqmHkS"
   },
   {
     id: 7,
@@ -82,7 +82,7 @@ export const moviesData = [
     director: "Anthony Russo, Joe Russo",
     cast: "Chris Evans, Robert Downey Jr., Scarlett Johansson, Sebastian Stan",
     synopsis: "Political involvement in the Avengers' affairs causes a rift between Captain America and Iron Man.",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/qGEeEyFBx8A?si=fpZLuL5gxOiT2_uz"
   },
   {
     id: 8,
@@ -94,7 +94,7 @@ export const moviesData = [
     director: "Sam Raimi",
     cast: "Benedict Cumberbatch, Elizabeth Olsen, Chiwetel Ejiofor",
     synopsis: "Doctor Strange teams up with a mysterious teenage girl who can travel across multiverses, to battle other-universe versions of himself which threaten to wipe out the multiverse.",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/w2E-XHZGxkE?si=4kXItPV-SajRkkNG"
   },
   {
     id: 9,
@@ -106,7 +106,7 @@ export const moviesData = [
     director: "Jon Watts",
     cast: "Tom Holland, Zendaya, Benedict Cumberbatch",
     synopsis: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear.",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/jxGAWesYzek?si=_6RlfxUc3UFyT7_7"
   },
   {
     id: 10,
@@ -118,7 +118,7 @@ export const moviesData = [
     director: "Peyton Reed",
     cast: "Paul Rudd, Michael Douglas, Evangeline Lilly",
     synopsis: "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor protect the secret behind his spectacular Ant-Man suit.",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/e2Z2MPWzE9Y?si=Ho85r__oWizose6Y"
   },
   {
     id: 11,
@@ -130,7 +130,7 @@ export const moviesData = [
     director: "Peyton Reed",
     cast: "Paul Rudd, Evangeline Lilly, Michael Peña",
     synopsis: "As Scott Lang balances being both a superhero and a father, Hope van Dyne and Dr. Hank Pym present an urgent new mission that finds the Ant-Man fighting alongside the Wasp to uncover secrets from their past.",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/GNkLcUkyLSM?si=qDfGXPh-17fGVBD1"
   },
   {
     id: 12,
@@ -142,6 +142,6 @@ export const moviesData = [
     director: "Peyton Reed",
     cast: "Paul Rudd, Evangeline Lilly, Jonathan Majors",
     synopsis: "Scott Lang and Hope Van Dyne are dragged into the Quantum Realm, along with Hope's parents and Scott's daughter. Together they must find a way to escape, but what secrets is Hope's mother hiding?",
-    videoUrl: ""
+    videoUrl: "https://youtu.be/mrxyHEmS7jc?si=3julSRT10CmuQLbL"
   }
 ];

@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import MovieGrid from './components/MovieGrid';
 import MovieDetailPage from './components/MovieDetailPage';
+import AboutPage from './components/AboutPage';
+import BugPage from './components/BugPage';
 import { moviesData } from './moviesData';
 
 function HomePage() {
@@ -45,6 +47,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movie/:id" element={<MovieDetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/bug" element={<BugPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
